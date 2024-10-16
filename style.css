@@ -1,0 +1,186 @@
+/* Import Poppins font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/* Global reset and font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Color Variables */
+:root {
+  --background: #2E3B34;     
+  --secondaryBackground: #4C5A56; 
+  --text: #D9D9D3;             
+  --burntOrange: #D87027;       
+  --copperyOrange: #A65E40;     
+  --charcoalGray: #555D58;     
+}
+
+/* Body styles */
+body {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+/* Container layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 120px auto;
+  max-width: 500px;
+}
+
+/* Stats container */
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 10px;
+  border: 2px solid var(--charcoalGray);
+  border-radius: 10px;
+  width: 100%;
+}
+
+/* Progress Bar */
+#progressBar {
+  width: 100%;
+  height: 10px;
+  background-color: var(--secondaryBackground);
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+#progress {
+  width: 50%;
+  height: 10px;
+  background-color: var(--burntOrange);
+  border-radius: 10px;
+}
+
+/* Task numbers */
+#numbers {
+  width: 100px;
+  height: 100px;
+  background-color: var(--copperyOrange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* Form layout */
+form {
+  margin-top: 60px;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+/* Input field */
+input {
+  flex: 1;
+  padding: 16px;
+  background-color: var(--secondaryBackground);
+  border: 1px solid var(--charcoalGray);
+  border-radius: 10px;
+  color: var(--text);
+  outline: none;
+}
+
+/* Button */
+button {
+  width: 50px;
+  height: 50%;
+  border-radius: 50%;
+  background-color: var(--copperyOrange);
+  color: var(--text);
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+/* Task list */
+#task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+  width: 100%;
+  list-style: none;
+}
+
+/* Task item */
+.taskItem {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--secondaryBackground);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Task text and checkbox */
+.task {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.task input {
+  width: 20px;
+  height: 20px;
+}
+/* Checkbox styling */
+.task input[type="checkbox"] {
+  width: 10px;
+  height: 10px;
+  position: relative;
+  cursor: pointer;
+  appearance: none;
+  background-color: var(--background);
+  border: 2px solid var(--charcoalGray);
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.task input[type="checkbox"]:checked {
+  background-color: var(--burntOrange);
+  border-color: var(--burntOrange);
+}
+
+/* Add a custom checkmark for checked boxes */
+.task input[type="checkbox"]:checked::before {
+  content: '✔';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Completed task style */
+.task.completed p {
+  text-decoration: line-through;
+  color: var(--burntOrange);
+}
+
+/* Icons for editing/deleting */
+.taskItem img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  filter: grayscale(100%) brightness(70%);
+  margin: 0 10px;
+}
+
+
