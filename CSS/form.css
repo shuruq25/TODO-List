@@ -1,0 +1,52 @@
+/* Task input form */
+form {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    justify-content: space-between;
+  }
+  
+  /* Input and select field */
+  input, select {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--charcoalGray);
+    background-color: var(--background);
+    color: var(--text);
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Focus effect for input fields */
+  input:focus, select:focus {
+    border-color: var(--burntOrange);
+    box-shadow: 0 0 5px rgba(216, 112, 39, 0.5);
+  }
+  
+  /* Button */
+  button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--copperyOrange);
+    color: var(--text);
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: var(--burntOrange);
+  }
+  
+  button:focus {
+    background-color: var(--burntOrange);
+    box-shadow: 0 0 5px rgba(216, 112, 39, 0.5);
+  }

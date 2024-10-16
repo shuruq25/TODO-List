@@ -1,0 +1,59 @@
+/* Main to-do box styling */
+.todo-box {
+    background-color: var(--secondaryBackground);
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Stats container */
+  .stats-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 10px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  /* Task list */
+  #task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+    width: 100%;
+    list-style: none;
+  }
+  
+  /* Task item */
+  .taskItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--secondaryBackground);
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  /* Task container styling */
+  .task {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .task p {
+    flex-grow: 1;
+    margin: 0;
+    font-size: 16px;
+    color: var(--text);
+    word-wrap: break-word;
+  }

@@ -1,0 +1,59 @@
+/* Checkbox styling */
+.task input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    appearance: none;
+    background-color: var(--background);
+    border: 2px solid var(--charcoalGray);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    margin-right: 15px;
+    position: relative;
+  }
+  
+  /* Checked state */
+  .task input[type="checkbox"]:checked {
+    background-color: var(--burntOrange);
+    border-color: var(--burntOrange);
+  }
+  
+  /* Custom checkmark for checked boxes */
+  .task input[type="checkbox"]:checked::before {
+    content: '✔';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text);
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  /* Completed task style */
+  .task.completed p {
+    text-decoration: line-through;
+    color: var(--burntOrange);
+  }
+  
+  /* Icons for editing/deleting */
+  .taskItem img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    filter: grayscale(100%) brightness(70%);
+    transition: filter 0.3s ease;
+    margin-left: 10px;
+  }
+  
+  .taskItem img:hover {
+    filter: grayscale(0%) brightness(100%);
+  }
+  
+  .taskItem .icons {
+    display: flex;
+    gap: 10px;
+  }

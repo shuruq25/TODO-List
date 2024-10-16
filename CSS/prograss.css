@@ -1,0 +1,57 @@
+/* Progress Bar */
+#progressBar {
+    width: 100%;
+    height: 10px;
+    background-color: grey;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  #progress {
+    width: 50%;
+    height: 10px;
+    background-color: var(--burntOrange);
+    border-radius: 10px;
+  }
+  
+  /* Stats titles */
+.details h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  
+  .details p {
+    font-size: 14px;
+    color: var(--text);
+  }
+  /* Task numbers */
+#numbers {
+    width: 100px;
+    height: 100px;
+    background-color: var(--copperyOrange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  /* Priority Circle */
+  .priority-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .low {
+    background-color: #6bbb8c; /* Green */
+  }
+  
+  .medium {
+    background-color: #e8e1a2; /* Yellow */
+  }
+  
+  .high {
+    background-color: #cf8989; /* Red */
+  }
