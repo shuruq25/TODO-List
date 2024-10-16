@@ -23,16 +23,31 @@
 body {
   background-color: var(--background);
   color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 16px;
 }
 
 /* Container layout */
 .container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  margin: 120px auto;
+  align-items: center;
+  flex-direction: column;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Main to-do box styling */
+.todo-box {
+  background-color: var(--secondaryBackground);
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
   max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Stats container */
@@ -41,16 +56,28 @@ body {
   justify-content: space-between;
   gap: 50px;
   padding: 10px;
-  border: 2px solid var(--charcoalGray);
+  border: 2px solid gray;
   border-radius: 10px;
   width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Stats titles */
+.details h1 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.details p {
+  font-size: 14px;
+  color: var(--text);
 }
 
 /* Progress Bar */
 #progressBar {
   width: 100%;
   height: 10px;
-  background-color: var(--secondaryBackground);
+  background-color: grey;
   border-radius: 5px;
   margin-top: 20px;
 }
@@ -75,29 +102,37 @@ body {
   font-weight: bold;
 }
 
-/* Form layout */
+/* Task input form */
 form {
-  margin-top: 60px;
-  width: 100%;
   display: flex;
   gap: 10px;
+  margin: 20px 0;
+  justify-content: space-between;
 }
 
-/* Input field */
-input {
+/* Input and select field */
+input, select {
   flex: 1;
-  padding: 16px;
-  background-color: var(--secondaryBackground);
+  padding: 12px;
+  border-radius: 8px;
   border: 1px solid var(--charcoalGray);
-  border-radius: 10px;
+  background-color: var(--background);
   color: var(--text);
+  font-size: 16px;
   outline: none;
+  transition: border-color 0.3s ease;
+}
+
+/* Focus effect for input fields */
+input:focus, select:focus {
+  border-color: var(--burntOrange);
+  box-shadow: 0 0 5px rgba(216, 112, 39, 0.5);
 }
 
 /* Button */
 button {
   width: 50px;
-  height: 50%;
+  height: 50px;
   border-radius: 50%;
   background-color: var(--copperyOrange);
   color: var(--text);
@@ -106,6 +141,18 @@ button {
   align-items: center;
   justify-content: center;
   outline: none;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--burntOrange);
+}
+
+button:focus {
+  background-color: var(--burntOrange);
+  box-shadow: 0 0 5px rgba(216, 112, 39, 0.5);
 }
 
 /* Task list */
@@ -122,41 +169,74 @@ button {
 .taskItem {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 10px;
   background-color: var(--secondaryBackground);
   padding: 10px;
   border-radius: 10px;
 }
 
-/* Task text and checkbox */
+/* Task container styling */
 .task {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.task input {
+.task p {
+  flex-grow: 1;
+  margin: 0;
+  font-size: 16px;
+  color: var(--text);
+  word-wrap: break-word;
+}
+
+/* Priority Circle */
+.priority-circle {
   width: 20px;
   height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
+
+.low {
+  background-color: #6bbb8c; /* Green */
+}
+
+.medium {
+  background-color: #e8e1a2; /* Yellow */
+}
+
+.high {
+  background-color: #cf8989; /* Red */
+}
+
 /* Checkbox styling */
 .task input[type="checkbox"] {
-  width: 10px;
-  height: 10px;
-  position: relative;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
   appearance: none;
   background-color: var(--background);
   border: 2px solid var(--charcoalGray);
   border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: background-color 0.3s ease;
+  margin-right: 15px;
+  position: relative;
 }
 
+/* Checked state */
 .task input[type="checkbox"]:checked {
   background-color: var(--burntOrange);
   border-color: var(--burntOrange);
 }
 
-/* Add a custom checkmark for checked boxes */
+/* Custom checkmark for checked boxes */
 .task input[type="checkbox"]:checked::before {
   content: '✔';
   position: absolute;
@@ -180,7 +260,39 @@ button {
   height: 24px;
   cursor: pointer;
   filter: grayscale(100%) brightness(70%);
-  margin: 0 10px;
+  transition: filter 0.3s ease;
+  margin-left: 10px;
 }
+
+.taskItem img:hover {
+  filter: grayscale(0%) brightness(100%);
+}
+
+.taskItem .icons {
+  display: flex;
+  gap: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

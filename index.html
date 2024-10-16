@@ -5,43 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>To-Do App</title>
+    <title>Todo App</title>
   </head>
   <body>
     <div class="container">
       <!-- Stats section -->
-      <div class="stats-container">
-        <div class="details">
-          <h1>TODO App</h1>
-          <p>Keep it up!</p>
-          <div id="progressBar">
-            <div id="progress"></div>
+      <div class="todo-box">
+        <div class="stats-container">
+          <div class="details">
+            <h1>TODO App</h1>
+            <p>You're making progress, keep it going!</p>
+            <div id="progressBar">
+              <div id="progress"></div>
+            </div>
+          </div>
+          <div class="stats-numbers">
+            <p id="numbers">0 / 0</p>
           </div>
         </div>
-        <div class="stats-numbers">
-          <p id="numbers">0 / 0</p>
-        </div>
-      </div>
-      
-      <!-- Task input form -->
-      <form id="taskForm" role="form">
-        <input
-          type="text"
-          id="taskInput"
-          placeholder="Write your task"
-          aria-label="Enter a new task"
-        />
-        <button
-          id="newTask"
-          type="button"
-          aria-label="Add new task"
-        >
-          +
-        </button>
-      </form>
 
-      <!-- Task list -->
-      <ul id="task-list" class="task-list" aria-live="polite"></ul>
+        <!-- Task input form -->
+        <form id="taskForm" role="form">
+          <input
+            type="text"
+            id="taskInput"
+            placeholder="Write your task"
+            aria-label="Enter a new task"
+          />
+          <select id="prioritySelect" aria-label="Select priority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+          <button
+            id="newTask"
+            type="button"
+            aria-label="Add new task"
+          >
+            +
+          </button>
+        </form>
+
+        <!-- Task list -->
+        <ul id="task-list" class="task-list" aria-live="polite"></ul>
+      </div>
     </div>
 
     <script src="index.js"></script>

@@ -1,5 +1,4 @@
 // Wait for the DOM to load before running the script
-
 document.addEventListener("DOMContentLoaded", () => {
   // Load tasks from localStorage if available
   const storedTasks = JSON.parse(localStorage.getItem("tasks"));
@@ -11,6 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const tasks = [];
+let isEditing = false;
+let editingIndex = null;
 
 // Save tasks to localStorage
 const saveTasks = () => {
@@ -20,9 +21,20 @@ const saveTasks = () => {
 // Add a new task
 const addTask = () => {
   const taskInput = document.getElementById("taskInput");
+  const prioritySelect = document.getElementById("prioritySelect");
   const text = taskInput.value.trim();
+  const priority = prioritySelect.value;
   if (text) {
-    tasks.push({ text: text, completed: false });
+    if (isEditing) {
+      // Edit the existing task
+      tasks[editingIndex].text = text;
+      tasks[editingIndex].priority = priority;
+      isEditing = false;
+      editingIndex = null;
+    } else {
+      // Add a new task
+      tasks.push({ text: text, completed: false, priority: priority });
+    }
     taskInput.value = "";
     updateTasksList();
     updateStats();
@@ -55,7 +67,6 @@ const editTask = (index) => {
   updateStats();
   saveTasks();
 };
-
 // Update task stats (completed/total)
 const updateStats = () => {
   const completeTasks = tasks.filter((task) => task.completed).length;
@@ -65,9 +76,7 @@ const updateStats = () => {
   const progressBar = document.getElementById("progress");
   progressBar.style.width = `${progress}%`;
 
-  document.getElementById(
-    "numbers"
-  ).innerText = `${completeTasks} / ${totalTasks}`;
+  document.getElementById("numbers").innerText = `${completeTasks} / ${totalTasks}`;
 
   // Show confetti if all tasks are completed
   if (totalTasks > 0 && completeTasks === totalTasks) {
@@ -83,6 +92,9 @@ const updateTasksList = () => {
   tasks.forEach((task, index) => {
     const listItem = document.createElement("li");
 
+    // Assign a class based on the task's priority
+    const priorityClass = task.priority;
+
     listItem.innerHTML = `
       <div class="taskItem">
         <div class="task ${task.completed ? "completed" : ""}">
@@ -92,6 +104,7 @@ const updateTasksList = () => {
           <p>${task.text}</p>
         </div>
         <div class="icons">
+          <span class="priority-circle ${priorityClass}"></span>
           <img src="images/write.png" alt="Edit" onClick="editTask(${index})" />
           <img src="images/delete.png" alt="Delete" onClick="deleteTask(${index})" />
         </div>
