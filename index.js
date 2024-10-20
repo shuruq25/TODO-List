@@ -61,7 +61,9 @@ const deleteTask = (index) => {
 // Edit a task
 const editTask = (index) => {
   const taskInput = document.getElementById("taskInput");
+  const prioritySelect = document.getElementById("prioritySelect");
   taskInput.value = tasks[index].text;
+  prioritySelect.value = tasks[index].priority; 
   tasks.splice(index, 1);
   updateTasksList();
   updateStats();
