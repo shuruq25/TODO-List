@@ -1,53 +1,42 @@
-# Todo App
+# To-Do List App 📝
 
-This project aims to build a to do list application by applying HTML, CSS and Javascript. The application allows users to manage their tasks effectively.
+A simple and interactive To-Do List application built with HTML, CSS, and JavaScript. This app allows users to manage tasks effectively, add priorities, and persist data using local storage. 🌟
 
-## Level 1: Todo App Basic Requirements
+## Features 🚀
 
-In this level, the application includes the following features:
+- **Add a Todo**: Enter a new task and select its priority (Low, Medium, High). ➕
+- **Render Todo List**: Display the list of todos with checkboxes and descriptions. 📋
+- **Complete a Todo**: Mark tasks as complete by checking the checkbox. ✅
+- **Edit a Todo**: Update the description of existing tasks. ✏️
+- **Delete a Todo**: Remove tasks from the list. 🗑️
+- **Todo Counter**: View the total number of tasks and completed tasks. 📊
+- **Persistent Storage**: Todos are saved in local storage, maintaining state even after page refresh. 💾
 
-1. Adding a Todo:
+## Technologies Used 💻
 
-   - Display an input field where users can enter a new todo item.
-   - Include an "Add" button to add the entered todo item to the list.
+- HTML
+- CSS
+- JavaScript
 
-2. Rendering Todo List:
+## Getting Started ⚙️
 
-   - Render the list of todos on the screen.
-   - Each todo item should display a checkbox and the task description.
+### Prerequisites
 
-3. Completing a Todo:
+- A modern web browser (e.g., Chrome, Firefox, Edge)
+- Basic knowledge of HTML, CSS, and JavaScript
 
-   - When a checkbox is clicked, mark the corresponding todo item as complete.
-   - Visually indicate the completion status of each todo item.
+### Installation
 
-4. Deleting a Todo:
-   - Implement a "Delete" button next to each todo item.
-   - When the button is clicked, remove the corresponding todo item from the list.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/shuruq25/TODO-List.git
+   
 
-## Level 2: Todo App Additional Requirements
+Usage 📖
+Add a Task: Enter a task description in the input field, select a priority, and click the "Add" button. ➕
+Complete a Task: Click the checkbox next to a task to mark it as complete. Completed tasks will be visually indicated. ✅
+Edit a Task: Click the "Edit" button next to a task to update its description. ✏️
+Delete a Task: Click the "Delete" button next to a task to remove it from the list. 🗑️
+View Task Counts: The counter will display the total number of tasks and the number of completed tasks. 📊
+Contributing 🤝
 
-In addition to the basic requirements, the application enhances its functionality with the following features:
-
-1. Editing a Todo:
-
-   - Implement an "Edit" button next to each todo item.
-   - When the button is clicked, allow users to update the task description of the corresponding todo.
-
-2. Todo Counter:
-
-   - Include a counter that displays the total number of todo items.
-   - Display the number of completed items as well.
-
-## Level 3: Todo App Bonus Requirements (Optional)
-
-If you finish the previous requirements before the deadline, you can tackle the following bonus tasks:
-
-1. Persistent Storage:
-   - Add the ability to persist todo items using local storage.
-   - Ensure that the list remains intact even after the page is refreshed.
-
-`Please note that the additional and bonus requirements are  optional and can be completed if you have additional time `
-
-**_DEADLINE THURSDAY 17/10/2014 at 5pm_**
-Happy coding!
