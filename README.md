@@ -32,7 +32,7 @@ A simple and interactive To-Do List application built with HTML, CSS, and JavaSc
    git clone https://github.com/shuruq25/TODO-List.git
    
 
-Usage 📖
+### Usage 📖
 Add a Task: Enter a task description in the input field, select a priority, and click the "Add" button. ➕
 Complete a Task: Click the checkbox next to a task to mark it as complete. Completed tasks will be visually indicated. ✅
 Edit a Task: Click the "Edit" button next to a task to update its description. ✏️
